@@ -1,0 +1,79 @@
+body{
+    margin: 0;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #0783e4;
+}
+
+.container{
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.container .loadercontainer{
+    width: 50%;
+    height: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .loadercontainer .loader{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    animation: rotate 3.5s linear infinite;
+    animation-delay:calc(var(--i)*0.1s);
+    padding: 10px;
+}
+
+.container .loadercontainer .loader .circle{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+    position: relative;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%,-100%);
+}
+
+@keyframes rotate{
+    30%{
+        transform: rotate(220deg);
+        opacity: 1;
+    }
+    40%{
+        transform: rotate(450deg);
+        opacity: 1;
+    }
+    75%{
+        transform: rotate(720deg);
+        opacity: 1;
+    }
+    76%{
+        opacity: 0;
+    }
+    100%{
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+}
+
+.container .message{
+    color: white;
+    font-size: 2em;
+    position: absolute;
+    bottom: 27px;
+    letter-spacing: 1px ;
+}
